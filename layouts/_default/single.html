@@ -8,6 +8,9 @@
 			{{ block "tags" . }}{{ end }}
 		{{- end -}}
 	{{- end -}}
+	{{- if .Site.Params.commento_url -}}
+		{{ block "commento" . }}{{ end }}
+	{{- end -}}
 </article>
 {{ end }}
 
@@ -35,4 +38,10 @@
 		{{- end -}}
 	</div>
 	{{- end }}
+{{ end }}
+
+{{ define "commento" }}
+	<script defer src="{{ .Site.Params.commento_url }}/js/commento.js"></script>
+	<h3>Comments</h3>
+	<div id="commento"></div>
 {{ end }}
