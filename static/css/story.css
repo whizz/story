@@ -32,7 +32,7 @@ blockquote {
   color: #6a737d;
   border-left: 0.25rem solid #dfe2e5;
 }
-pre {
+article pre {
   border: 1px solid #dfe2e5;
   border-radius: 3px;
   font-size: 75%;

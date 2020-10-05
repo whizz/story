@@ -8,10 +8,10 @@
 			{{ block "tags" . }}{{ end }}
 		{{- end -}}
 	{{- end -}}
-	{{- if .Site.Params.commento_url -}}
-		{{ block "commento" . }}{{ end }}
-	{{- end -}}
 </article>
+{{- if .Site.Params.commento_url -}}
+	{{ block "commento" . }}{{ end }}
+{{- end -}}
 {{ end }}
 
 {{ define "social" }}
@@ -41,7 +41,9 @@
 {{ end }}
 
 {{ define "commento" }}
+<div class="center bg-white br-3 pv1 ph4 lh-copy f4 nested-links measure-wide commento">
 	<script defer src="{{ .Site.Params.commento_url }}/js/commento.js"></script>
 	<h3>Comments</h3>
 	<div id="commento"></div>
+</div>
 {{ end }}
