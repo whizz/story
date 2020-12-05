@@ -26,13 +26,15 @@
 		<link rel="stylesheet" href="{{ "css/story.css" | absURL }}" />
 		<link rel="stylesheet" href="{{ "css/descartes.css" | absURL }}" />
 		{{ end }}
+		{{ if not .Site.Params.localFA -}}
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+		{{- end -}}
 		{{ end }}
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="{{ .Site.Params.jquery_url | default "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" }}"></script>
 		{{ if or (in .Site.Params.classes "feature-highlight") (in .Params.classes "feature-highlight") -}}
 			{{- if not (or (in .Site.Params.classes "feature-nohighlight") (in .Params.classes "feature-nohighlight") ) -}}
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+		<script src="{{ .Site.Params.highlight_url | default "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" }}"></script>
 			{{- end -}}
 		{{- end -}}
 		{{ if or (in .Site.Params.classes "feature-math") (in .Params.classes "feature-math") -}}
