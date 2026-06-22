@@ -140,7 +140,6 @@
 			</p>
 		</footer>
 		{{ end }}
-	{{ template "_internal/google_analytics_async.html" . }}
 	{{ with .Site.Params.foot }}{{ range . }}
 	{{ . | safeHTML }}{{ end }}{{ end }}
 	</body>
